@@ -30,8 +30,13 @@ def get_label_veclist(list_cwe):
 
     return list_label
 
-
 def get_label_cwe(cweid, label_cwe):
+    """ recursive function returning a hierarchical list of cwe-types
+
+    :param cweid: CWE type string (e.g. CWE-121)
+    :param label_cwe: list of CWE-types (CWE-121, CWE-787, CWE-788
+    :return: label_cwe
+    """
     if cweid in label_vec_type:
         label_cwe.append(cweid)
         return label_cwe
