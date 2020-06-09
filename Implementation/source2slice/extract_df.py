@@ -326,7 +326,7 @@ def program_slice(pdg, startnodesID, slicetype, testID):#process startnodes as a
 
 def api_slice():
     count = 1
-    store_filepath = "C/test_data/4/api_slices.txt"
+    store_filepath = "test_data/4/slices/api_slices.txt"
     f = open("sensifunc_slice_points.pkl", 'rb')
     dict_unsliced_sensifunc = pickle.load(f)
     f.close()
@@ -360,7 +360,7 @@ def api_slice():
 
 def pointers_slice():
     count = 1
-    store_filepath = "C/test_data/4/pointersuse_slices.txt"
+    store_filepath = "test_data/4/slices/pointersuse_slices.txt"
     f = open("pointuse_slice_points.pkl", 'rb')
     dict_unsliced_pointers = pickle.load(f)
     print dict_unsliced_pointers
@@ -403,7 +403,7 @@ def pointers_slice():
 
 def arrays_slice():
     count = 1
-    store_filepath = "C/test_data/4/arraysuse_slices.txt"
+    store_filepath = "test_data/4/slices/arraysuse_slices.txt"
     f = open("arrayuse_slice_points.pkl", 'rb')
     dict_unsliced_pointers = pickle.load(f)
     f.close()
@@ -441,7 +441,7 @@ def arrays_slice():
 
 def integeroverflow_slice():
     count = 1
-    store_filepath = "C/test_data/4/integeroverflow_slices.txt"
+    store_filepath = "test_data/4/slices/integeroverflow_slices.txt"
     f = open("integeroverflow_slice_points_new.pkl", 'rb')
     dict_unsliced_expr = pickle.load(f)
     f.close()
