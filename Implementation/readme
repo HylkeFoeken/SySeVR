@@ -2,10 +2,14 @@ Environment:
 joern 0.3.1, neo4j 2.1.5, python 3.6, tensorflow 1.6, gensim 3.4
 
 help files:
-dict_cwe2father.pkl - maps cwe child to parents (CWE-121 -> CWE-787, CWE-788)
-label_vec_type.pkl - supported CWE-types
-dict_testcase2code.pkl - maps SARD test cases to vulnerable lines of code
-dict_flawline2filepath.pkl - maps SARD test cases to typed vulnerable line
+dict_cwe2father.pkl - maps CWE child to parents (CWE-121 -> CWE-787, CWE-788)
+label_vec_type.pkl - list of CWE-types for vulnerability type vector for each slice
+example: ['CWE-128', 'CWE-131', 'CWE-135', ...]
+dict_testcase2code.pkl - maps SARD test case file and line number to vulnerable lines of code
+example: '74218/CWE124_Buffer_Underwrite__CWE839_rand_45.c/36' --> u'            buffer[data] = 1;'
+
+dict_flawline2filepath.pkl - maps SARD test case files to typed vulnerable lines 
+example: '74218/CWE124_Buffer_Underwrite__CWE839_rand_45.c' --> [{u'36': u'CWE-124'}]
 
 Step 1: Generating slices (i.e., SeVCs)
 (1) Use joern to parse source code: the input is source code files, and the output is a file named .joernIndex.
