@@ -3,10 +3,8 @@
 # run all module 1 scripts
 #########################
 
-python get_cfg_relation.py
-python complete_PDG.py
-python access_db_operate.py
-python points_get.py
-python extract_df.py
-python make_label.py
-python data_preprocess.py
+python process_dataflow_func.py
+python create_w2vmodel.py 
+#python process_dataflow_func.py
+#python process_dataflow_func.py
+#python process_dataflow_func.py
