@@ -122,10 +122,12 @@ def get_dldata(filepath, dlTrainCorpusPath, dlTestCorpusPath, split=0.8, seed=11
             gc.collect()
 
 if __name__ == "__main__":
-    
-    CORPUSPATH = "./data/cdg_ddg/corpus/"
-    VECTORPATH = "./data/cdg_ddg/vector/"
-    W2VPATH = "./w2v_model/wordmodel3"
+    CORPUSPATH = "../source2slice/test_data/4/corpus/"
+    #CORPUSPATH = "./data/cdg_ddg/corpus/"
+    #VECTORPATH = "./data/cdg_ddg/vector/"
+    VECTORPATH = "../source2slice/test_data/4/vector/"
+    #W2VPATH = "./w2v_model/wordmodel3"
+    W2VPATH = "../source2slice/test_data/4/w2v_model/wordmodel3"
     print("turn the corpus into vectors...")
     for corpusfiles in os.listdir(CORPUSPATH):
         print(corpusfiles)
@@ -145,8 +147,10 @@ if __name__ == "__main__":
     print("w2v over...")
 
     print("spliting the train set and test set...")
-    dlTrainCorpusPath = "./dl_input/cdg_ddg/train/"
-    dlTestCorpusPath = "./dl_input/cdg_ddg/test/"
+    #dlTrainCorpusPath = "./dl_input/cdg_ddg/train/"
+    dlTrainCorpusPath = "../source2slice/test_data/4/dl_input/train"
+    #dlTestCorpusPath = "./dl_input/cdg_ddg/test/"
+    dlTestCorpusPath = "../source2slice/test_data/4/dl_input/test/"
     get_dldata(VECTORPATH, dlTrainCorpusPath, dlTestCorpusPath)
     
     print("success!")

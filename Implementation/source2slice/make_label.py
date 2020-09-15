@@ -1,6 +1,7 @@
 ## coding:utf-8
 import os
 import pickle
+import json
 
 f = open("dict_cwe2father.pkl", 'rb')
 dict_cwe2father = pickle.load(f)
@@ -86,9 +87,6 @@ def make_label(path, dict_vuln2testcase, _type):
                 for line in list_codeline:
                     line = line.strip()
                     if line in _dict.keys():
-                        if not ' '.join((list_codes[list_codeline.index(line)].strip()).split(' ')[:-1]).replace(' ', '') == \
-                                   dict_testcase2code[key_name + "/" + line].replace(' ', '').strip():
-                            continue
                         cweid = _dict[line]
                         vulline.append(list_codeline.index(line))
 
@@ -135,6 +133,9 @@ def main():
     f = open("dict_flawline2filepath.pkl", 'rb')
     dict_vuln2testcase = pickle.load(f)
     f.close()
+    with open('dict_flawline2filepath.json', 'w') as file:
+        file.write(json.dumps(dict_vuln2testcase))
+
     _type = False
     time = '4'
     lang = 'test_data/' + time

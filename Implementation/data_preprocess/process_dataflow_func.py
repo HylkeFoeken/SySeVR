@@ -36,10 +36,12 @@ def get_sentences(_path,labelpath,corpuspath,maptype=True):
 
         filepath = os.path.join(_path, filename)
         f1 = open(filepath, 'r')
-        if FLAGMODE:
-            slicelists = f1.read().split("------------------------------")
-        else:
-            slicelists = f1.read().split("-------------------------")
+        #if FLAGMODE:
+        slicelists_text = f1.read();
+        slicelists = slicelists_text.split("------------------------------")
+        #else:
+        #    slicelists = f1.read().split("-------------------------")
+
         f1.close()
 
         if slicelists[0] == '':
@@ -194,9 +196,9 @@ def get_sentences(_path,labelpath,corpuspath,maptype=True):
         f1.close()
 
 if __name__ == '__main__':
-    SLICEPATH = './data/data_source/SARD/'
-    LABELPATH = './data/label_source/SARD/'
-    CORPUSPATH = './data/corpus/SARD/'
+    SLICEPATH = '../source2slice/test_data/4/'
+    LABELPATH = '../source2slice/test_data/4/labels/'
+    CORPUSPATH = '../source2slice/test_data/4/corpus/'
 
     MAPTYPE = True
 

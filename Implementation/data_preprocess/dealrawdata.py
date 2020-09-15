@@ -5,18 +5,12 @@ This python file is used to train data in CNN model
 
 from __future__ import absolute_import
 from __future__ import print_function
-import pickle
-import cPickle
-import numpy as np
-import random
-import time
-import math
-import os
-from collections import Counter
-from imblearn.ensemble import BalanceCascade
-from imblearn.over_sampling import ADASYN
-from imblearn.over_sampling import SMOTE
 
+import os
+import pickle
+
+# import cPickle
+import numpy as np
 
 np.random.seed(1337)  # for reproducibility
 
@@ -106,8 +100,13 @@ if __name__ == "__main__":
     batchSize = 32
     vectorDim = 40
     maxLen = 500
-    raw_traindataSetPath = "./dl_input/cdg_ddg/train/"
-    raw_testdataSetPath = "./dl_input/cdg_ddg/test/"
-    traindataSetPath = "./dl_input_shuffle/cdg_ddg/train/"
-    testdataSetPath = "./dl_input_shuffle/cdg_ddg/test/"
+
+    #raw_traindataSetPath = "./dl_input/cdg_ddg/train/"
+    raw_traindataSetPath = "../source2slice/test_data/4/dl_input/train/"
+    #raw_testdataSetPath = "./dl_input/cdg_ddg/test/"
+    raw_testdataSetPath = "../source2slice/test_data/4/dl_input/test/"
+    #traindataSetPath = "./dl_input_shuffle/cdg_ddg/train/"
+    traindataSetPath = "../source2slice/test_data/4/dl_input_shuffle/train/"
+    #testdataSetPath = "./dl_input_shuffle/cdg_ddg/test/"
+    testdataSetPath = "../source2slice/test_data/4/dl_input_shuffle/test/"
     dealrawdata(raw_traindataSetPath, raw_testdataSetPath, traindataSetPath, testdataSetPath, batchSize, maxLen, vectorDim)
